@@ -1,0 +1,80 @@
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: na.dot
+
+
+
+
+[oob-switch]
+oob-mgmt-switch ansible_host=192.168.200.1
+
+
+
+
+
+
+
+[leaf]
+dc1-leaf8 ansible_host=192.168.200.108
+dc1-leaf10 ansible_host=192.168.200.110
+dc1-leaf3 ansible_host=192.168.200.103
+dc1-leaf1 ansible_host=192.168.200.101
+dc1-leaf6 ansible_host=192.168.200.106
+dc2-leaf7 ansible_host=192.168.200.147
+dc1-leaf7 ansible_host=192.168.200.107
+dc1-leaf9 ansible_host=192.168.200.109
+dc1-leaf2 ansible_host=192.168.200.102
+dc1-leaf5 ansible_host=192.168.200.105
+dc2-leaf1 ansible_host=192.168.200.141
+dc2-leaf5 ansible_host=192.168.200.145
+dc2-leaf10 ansible_host=192.168.200.150
+dc2-leaf3 ansible_host=192.168.200.143
+dc1-leaf4 ansible_host=192.168.200.104
+dc2-leaf2 ansible_host=192.168.200.142
+dc2-leaf8 ansible_host=192.168.200.148
+dc2-leaf6 ansible_host=192.168.200.146
+dc2-leaf4 ansible_host=192.168.200.144
+dc2-leaf9 ansible_host=192.168.200.149
+
+
+
+[spine]
+dc2-spine2 ansible_host=192.168.200.162
+dc1-spine2 ansible_host=192.168.200.122
+dc1-spine1 ansible_host=192.168.200.121
+dc2-spine1 ansible_host=192.168.200.161
+
+
+
+
+
+[host]
+dc1-server4 ansible_host=192.168.200.204
+dc1-server6 ansible_host=192.168.200.206
+dc2-server5 ansible_host=192.168.200.225
+dc2-fw1 ansible_host=192.168.200.232
+dc1-server1 ansible_host=192.168.200.201
+dc2-server2 ansible_host=192.168.200.222
+dc1-server2 ansible_host=192.168.200.202
+dc1-fw1 ansible_host=192.168.200.231
+dc2-server1 ansible_host=192.168.200.221
+dc2-server6 ansible_host=192.168.200.226
+dc2-server9 ansible_host=192.168.200.229
+dc1-server7 ansible_host=192.168.200.207
+dc2-server8 ansible_host=192.168.200.228
+dc1-server9 ansible_host=192.168.200.209
+dc1-server8 ansible_host=192.168.200.208
+dc1-server10 ansible_host=192.168.200.210
+dc2-server10 ansible_host=192.168.200.230
+dc2-server4 ansible_host=192.168.200.224
+dc1-server3 ansible_host=192.168.200.203
+dc1-server5 ansible_host=192.168.200.205
+dc2-server7 ansible_host=192.168.200.227
+dc2-server3 ansible_host=192.168.200.223
+
+
+[all:vars]
+ansible_user=cumulus
+ansible_become_pass=CumulusLinux!
+ansible_ssh_pass=CumulusLinux!

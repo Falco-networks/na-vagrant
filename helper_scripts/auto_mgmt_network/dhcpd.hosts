@@ -1,0 +1,110 @@
+# /etc/dhcp/dhcpd.hosts
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: na.dot
+
+group {
+
+  option domain-name-servers 192.168.200.254;
+  option domain-name "simulation";
+  option routers 192.168.200.254;
+  option www-server 192.168.200.254;
+  option default-url = "http://192.168.200.254/onie-installer";
+
+
+host oob-mgmt-switch {hardware ethernet 44:38:39:00:01:3f; fixed-address 192.168.200.1; option host-name "oob-mgmt-switch"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-spine2 {hardware ethernet 44:38:39:00:00:e6; fixed-address 192.168.200.162; option host-name "dc2-spine2"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-spine2 {hardware ethernet 44:38:39:00:00:f4; fixed-address 192.168.200.122; option host-name "dc1-spine2"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-spine1 {hardware ethernet 44:38:39:00:01:00; fixed-address 192.168.200.121; option host-name "dc1-spine1"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-spine1 {hardware ethernet 44:38:39:00:01:14; fixed-address 192.168.200.161; option host-name "dc2-spine1"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf8 {hardware ethernet 44:38:39:00:00:ec; fixed-address 192.168.200.108; option host-name "dc1-leaf8"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf10 {hardware ethernet 44:38:39:00:00:f8; fixed-address 192.168.200.110; option host-name "dc1-leaf10"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf3 {hardware ethernet 44:38:39:00:00:fa; fixed-address 192.168.200.103; option host-name "dc1-leaf3"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf1 {hardware ethernet 44:38:39:00:00:fc; fixed-address 192.168.200.101; option host-name "dc1-leaf1"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf6 {hardware ethernet 44:38:39:00:01:04; fixed-address 192.168.200.106; option host-name "dc1-leaf6"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf7 {hardware ethernet 44:38:39:00:01:08; fixed-address 192.168.200.147; option host-name "dc2-leaf7"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf7 {hardware ethernet 44:38:39:00:01:0c; fixed-address 192.168.200.107; option host-name "dc1-leaf7"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf9 {hardware ethernet 44:38:39:00:01:1c; fixed-address 192.168.200.109; option host-name "dc1-leaf9"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf2 {hardware ethernet 44:38:39:00:01:1e; fixed-address 192.168.200.102; option host-name "dc1-leaf2"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf5 {hardware ethernet 44:38:39:00:01:22; fixed-address 192.168.200.105; option host-name "dc1-leaf5"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf1 {hardware ethernet 44:38:39:00:01:24; fixed-address 192.168.200.141; option host-name "dc2-leaf1"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf5 {hardware ethernet 44:38:39:00:01:26; fixed-address 192.168.200.145; option host-name "dc2-leaf5"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf10 {hardware ethernet 44:38:39:00:01:28; fixed-address 192.168.200.150; option host-name "dc2-leaf10"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf3 {hardware ethernet 44:38:39:00:01:2a; fixed-address 192.168.200.143; option host-name "dc2-leaf3"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-leaf4 {hardware ethernet 44:38:39:00:01:2c; fixed-address 192.168.200.104; option host-name "dc1-leaf4"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf2 {hardware ethernet 44:38:39:00:01:2e; fixed-address 192.168.200.142; option host-name "dc2-leaf2"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf8 {hardware ethernet 44:38:39:00:01:32; fixed-address 192.168.200.148; option host-name "dc2-leaf8"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf6 {hardware ethernet 44:38:39:00:01:34; fixed-address 192.168.200.146; option host-name "dc2-leaf6"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf4 {hardware ethernet 44:38:39:00:01:38; fixed-address 192.168.200.144; option host-name "dc2-leaf4"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc2-leaf9 {hardware ethernet 44:38:39:00:01:3a; fixed-address 192.168.200.149; option host-name "dc2-leaf9"; option cumulus-provision-url "http://192.168.200.254/cumulus-ztp";  } 
+
+host dc1-server4 {hardware ethernet 44:38:39:00:00:e4; fixed-address 192.168.200.204; option host-name "dc1-server4"; } 
+
+host dc1-server6 {hardware ethernet 44:38:39:00:00:e8; fixed-address 192.168.200.206; option host-name "dc1-server6"; } 
+
+host dc2-server5 {hardware ethernet 44:38:39:00:00:ea; fixed-address 192.168.200.225; option host-name "dc2-server5"; } 
+
+host dc2-fw1 {hardware ethernet 44:38:39:00:00:ee; fixed-address 192.168.200.232; option host-name "dc2-fw1"; } 
+
+host dc1-server1 {hardware ethernet 44:38:39:00:00:f0; fixed-address 192.168.200.201; option host-name "dc1-server1"; } 
+
+host dc2-server2 {hardware ethernet 44:38:39:00:00:f2; fixed-address 192.168.200.222; option host-name "dc2-server2"; } 
+
+host dc1-server2 {hardware ethernet 44:38:39:00:00:f6; fixed-address 192.168.200.202; option host-name "dc1-server2"; } 
+
+host dc1-fw1 {hardware ethernet 44:38:39:00:00:fe; fixed-address 192.168.200.231; option host-name "dc1-fw1"; } 
+
+host dc2-server1 {hardware ethernet 44:38:39:00:01:02; fixed-address 192.168.200.221; option host-name "dc2-server1"; } 
+
+host dc2-server6 {hardware ethernet 44:38:39:00:01:06; fixed-address 192.168.200.226; option host-name "dc2-server6"; } 
+
+host dc2-server9 {hardware ethernet 44:38:39:00:01:0a; fixed-address 192.168.200.229; option host-name "dc2-server9"; } 
+
+host dc1-server7 {hardware ethernet 44:38:39:00:01:0e; fixed-address 192.168.200.207; option host-name "dc1-server7"; } 
+
+host dc2-server8 {hardware ethernet 44:38:39:00:01:10; fixed-address 192.168.200.228; option host-name "dc2-server8"; } 
+
+host dc1-server9 {hardware ethernet 44:38:39:00:01:12; fixed-address 192.168.200.209; option host-name "dc1-server9"; } 
+
+host dc1-server8 {hardware ethernet 44:38:39:00:01:16; fixed-address 192.168.200.208; option host-name "dc1-server8"; } 
+
+host dc1-server10 {hardware ethernet 44:38:39:00:01:18; fixed-address 192.168.200.210; option host-name "dc1-server10"; } 
+
+host dc2-server10 {hardware ethernet 44:38:39:00:01:1a; fixed-address 192.168.200.230; option host-name "dc2-server10"; } 
+
+host dc2-server4 {hardware ethernet 44:38:39:00:01:20; fixed-address 192.168.200.224; option host-name "dc2-server4"; } 
+
+host dc1-server3 {hardware ethernet 44:38:39:00:01:30; fixed-address 192.168.200.203; option host-name "dc1-server3"; } 
+
+host dc1-server5 {hardware ethernet 44:38:39:00:01:36; fixed-address 192.168.200.205; option host-name "dc1-server5"; } 
+
+host dc2-server7 {hardware ethernet 44:38:39:00:01:3c; fixed-address 192.168.200.227; option host-name "dc2-server7"; } 
+
+host dc2-server3 {hardware ethernet 44:38:39:00:01:3e; fixed-address 192.168.200.223; option host-name "dc2-server3"; } 
+}#End of static host group
+
