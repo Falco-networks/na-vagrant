@@ -15,7 +15,10 @@ if [ "$?" == "0" ]; then
     #These lines will be used when booting on a debian-based box
     echo -e "note: ubuntu device detected"
     
-    #Install LLDP, frr 
+    #install ssh key
+    echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSCPvbPvw3sNytx1B7zIYoEA3cgKkYCYXnJgEk1gMBbPVmcOxXyuIoH7oL25UCCO/s3ZTwIyIMOIK2TH3wEovbjbE268O5og1P6DEbazA+wzC6cHC1QLCjtZ/bDlyCX9ka6nJ8KbF+o6JFMncT+wkRve7z7WXN8SevPebj3Crvu/ppJkvB9VbFZ/ej5GZQOxpXELLlpRZ/cYNEzSUDlGk1pqO23303/l5svblMv2uoMRWxHX3ZPK05Gn3tUDbDmToxs3nn4lH32758Rdc8EgM9sJNcg1k0V8MHFbJ0BDZKb6JM5QXt+ek/xYn8jQpEkJDiqNb7d8aFHrqGPSTHDblN root@oob-mgmt-server | sudo tee -a /home/cumulus/.ssh/authorized_keys
+
+    #Install LLDP, frr
     curl -s https://deb.frrouting.org/frr/keys.asc | sudo apt-key add -
     echo deb https://deb.frrouting.org/frr xenial frr-stable | sudo tee -a /etc/apt/sources.list.d/frr.list
     apt-get update -qy && apt-get install lldpd frr frr-pythontools -qy
