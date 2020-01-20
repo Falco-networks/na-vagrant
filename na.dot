@@ -49,8 +49,8 @@ graph dc1 {
  "dc2-server9" [function="host" mgmt_ip="192.168.200.229" config="./helper_scripts/extra_server_config.sh"]
  "dc2-server10" [function="host" mgmt_ip="192.168.200.230" config="./helper_scripts/extra_server_config.sh"]
  #Dummy firewalls
- "dc1-fw1" [function="host" mgmt_ip="192.168.200.231" config="./helper_scripts/extra_server_config.sh"]
- "dc2-fw1" [function="host" mgmt_ip="192.168.200.232" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-fw1" [function="host" mgmt_ip="192.168.200.231" config="./helper_scripts/extra_firewall_config.sh"]
+ "dc2-fw1" [function="host" mgmt_ip="192.168.200.232" config="./helper_scripts/extra_firewall_config.sh"]
   
   #DC1 Spine links
   "dc1-spine1":"swp49" -- "dc1-spine2":"swp49"
