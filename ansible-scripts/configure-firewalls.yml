@@ -1,0 +1,49 @@
+---
+  #Setup Play1: Configure spine switches
+  - name: Configure firewall (Hosts) with basic config, ifupdown2 and frr
+    hosts: dc1-fw1:dc2-fw1
+    become: yes
+    #vars_files:
+    #  - vars.yml
+
+    tasks:
+    - name: Create .ssh directory
+      file:
+        path: /home/cumulus/.ssh
+        state: directory
+        owner: cumulus
+        group: cumulus
+        mode: '0700'
+
+    - name: create authorized_keys file
+      copy:
+        dest: /home/cumulus/.ssh/authorized_keys
+        content: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSCPvbPvw3sNytx1B7zIYoEA3cgKkYCYXnJgEk1gMBbPVmcOxXyuIoH7oL25UCCO/s3ZTwIyIMOIK2TH3wEovbjbE268O5og1P6DEbazA+wzC6cHC1QLCjtZ/bDlyCX9ka6nJ8KbF+o6JFMncT+wkRve7z7WXN8SevPebj3Crvu/ppJkvB9VbFZ/ej5GZQOxpXELLlpRZ/cYNEzSUDlGk1pqO23303/l5svblMv2uoMRWxHX3ZPK05Gn3tUDbDmToxs3nn4lH32758Rdc8EgM9sJNcg1k0V8MHFbJ0BDZKb6JM5QXt+ek/xYn8jQpEkJDiqNb7d8aFHrqGPSTHDblN root@oob-mgmt-server"
+
+    - name: set permissions on authorized_keys file
+      file:
+        path: /home/cumulus/.ssh/authorized_keys
+        owner: cumulus
+        group: cumulus
+        mode: '0600'
+    
+    - name: Add apt key for frr
+      apt_key:
+        url: https://deb.frrouting.org/frr/keys.asc
+        state: present
+
+    - name: add frr repo to apt-sources
+      copy:
+        dest: /etc/apt/sources.list.d/frr.list
+        content: "deb https://deb.frrouting.org/frr xenial frr-stable"
+
+    - name: add ifupdown2 repo to apt-sources
+      copy:
+        dest: /etc/apt/sources.list.d/ifupdown2.list
+        content: "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe"
+
+    - name: run apt update
+      apt:
+        update_cache: yes
+
+    
