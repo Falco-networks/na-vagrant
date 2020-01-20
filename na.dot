@@ -1,0 +1,189 @@
+graph dc1 {
+ #OOB network
+ "oob-mgmt-server" [function="oob-server" mgmt_ip="192.168.200.254/24"]
+ "oob-mgmt-switch" [function="oob-switch" mgmt_ip="192.168.200.1"]
+ #DC1
+ "dc1-leaf1" [function="leaf" mgmt_ip="192.168.200.101"]
+ "dc1-leaf2" [function="leaf" mgmt_ip="192.168.200.102"]
+ "dc1-leaf3" [function="leaf" mgmt_ip="192.168.200.103"]
+ "dc1-leaf4" [function="leaf" mgmt_ip="192.168.200.104"]
+ "dc1-leaf5" [function="leaf" mgmt_ip="192.168.200.105"]
+ "dc1-leaf6" [function="leaf" mgmt_ip="192.168.200.106"]
+ "dc1-leaf7" [function="leaf" mgmt_ip="192.168.200.107"]
+ "dc1-leaf8" [function="leaf" mgmt_ip="192.168.200.108"]
+ "dc1-leaf9" [function="leaf" mgmt_ip="192.168.200.109"]
+ "dc1-leaf10" [function="leaf" mgmt_ip="192.168.200.110"]
+ "dc1-spine1" [function="spine" mgmt_ip="192.168.200.121"]
+ "dc1-spine2" [function="spine" mgmt_ip="192.168.200.122"]
+ "dc1-server1" [function="host" mgmt_ip="192.168.200.201" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server2" [function="host" mgmt_ip="192.168.200.202" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server3" [function="host" mgmt_ip="192.168.200.203" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server4" [function="host" mgmt_ip="192.168.200.204" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server5" [function="host" mgmt_ip="192.168.200.205" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server6" [function="host" mgmt_ip="192.168.200.206" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server7" [function="host" mgmt_ip="192.168.200.207" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server8" [function="host" mgmt_ip="192.168.200.208" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server9" [function="host" mgmt_ip="192.168.200.209" config="./helper_scripts/extra_server_config.sh"]
+ "dc1-server10" [function="host" mgmt_ip="192.168.200.210" config="./helper_scripts/extra_server_config.sh"]
+ #DC2
+ "dc2-leaf1" [function="leaf" mgmt_ip="192.168.200.141"]
+ "dc2-leaf2" [function="leaf" mgmt_ip="192.168.200.142"]
+ "dc2-leaf3" [function="leaf" mgmt_ip="192.168.200.143"]
+ "dc2-leaf4" [function="leaf" mgmt_ip="192.168.200.144"]
+ "dc2-leaf5" [function="leaf" mgmt_ip="192.168.200.145"]
+ "dc2-leaf6" [function="leaf" mgmt_ip="192.168.200.146"]
+ "dc2-leaf7" [function="leaf" mgmt_ip="192.168.200.147"]
+ "dc2-leaf8" [function="leaf" mgmt_ip="192.168.200.148"]
+ "dc2-leaf9" [function="leaf" mgmt_ip="192.168.200.149"]
+ "dc2-leaf10" [function="leaf" mgmt_ip="192.168.200.150"]
+ "dc2-spine1" [function="spine" mgmt_ip="192.168.200.161"]
+ "dc2-spine2" [function="spine" mgmt_ip="192.168.200.162"]
+ "dc2-server1" [function="host" mgmt_ip="192.168.200.221" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server2" [function="host" mgmt_ip="192.168.200.222" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server3" [function="host" mgmt_ip="192.168.200.223" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server4" [function="host" mgmt_ip="192.168.200.224" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server5" [function="host" mgmt_ip="192.168.200.225" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server6" [function="host" mgmt_ip="192.168.200.226" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server7" [function="host" mgmt_ip="192.168.200.227" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server8" [function="host" mgmt_ip="192.168.200.228" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server9" [function="host" mgmt_ip="192.168.200.229" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-server10" [function="host" mgmt_ip="192.168.200.230" config="./helper_scripts/extra_server_config.sh"]
+ #Dummy firewalls
+ "dc1-fw1" [function="host" mgmt_ip="192.168.200.231" config="./helper_scripts/extra_server_config.sh"]
+ "dc2-fw1" [function="host" mgmt_ip="192.168.200.232" config="./helper_scripts/extra_server_config.sh"]
+  
+  #DC1 Spine links
+  "dc1-spine1":"swp49" -- "dc1-spine2":"swp49"
+  "dc1-spine1":"swp50" -- "dc1-spine2":"swp50"
+
+  #DC2 Spine links
+  "dc2-spine1":"swp49" -- "dc2-spine2":"swp49"
+  "dc2-spine1":"swp50" -- "dc2-spine2":"swp50"
+
+  #DC1 Leaf to spine links
+  "dc1-leaf1":"swp51" -- "dc1-spine1":"swp1"
+  "dc1-leaf2":"swp51" -- "dc1-spine1":"swp2"
+  "dc1-leaf3":"swp51" -- "dc1-spine1":"swp3"
+  "dc1-leaf4":"swp51" -- "dc1-spine1":"swp4"
+  "dc1-leaf5":"swp51" -- "dc1-spine1":"swp5"
+  "dc1-leaf6":"swp51" -- "dc1-spine1":"swp6"
+  "dc1-leaf7":"swp51" -- "dc1-spine1":"swp7"
+  "dc1-leaf8":"swp51" -- "dc1-spine1":"swp8"
+  "dc1-leaf9":"swp51" -- "dc1-spine1":"swp9"
+  "dc1-leaf10":"swp51" -- "dc1-spine1":"swp10"
+  "dc1-leaf1":"swp52" -- "dc1-spine2":"swp1"
+  "dc1-leaf2":"swp52" -- "dc1-spine2":"swp2"
+  "dc1-leaf3":"swp52" -- "dc1-spine2":"swp3"
+  "dc1-leaf4":"swp52" -- "dc1-spine2":"swp4"
+  "dc1-leaf5":"swp52" -- "dc1-spine2":"swp5"
+  "dc1-leaf6":"swp52" -- "dc1-spine2":"swp6"
+  "dc1-leaf7":"swp52" -- "dc1-spine2":"swp7"
+  "dc1-leaf8":"swp52" -- "dc1-spine2":"swp8"
+  "dc1-leaf9":"swp52" -- "dc1-spine2":"swp9"
+  "dc1-leaf10":"swp52" -- "dc1-spine2":"swp10"
+
+  #DC1 Leaf peerlinks
+  "dc1-leaf1":"swp49" -- "dc1-leaf2":"swp49"
+  "dc1-leaf1":"swp50" -- "dc1-leaf2":"swp50"
+  "dc1-leaf3":"swp49" -- "dc1-leaf4":"swp49"
+  "dc1-leaf3":"swp50" -- "dc1-leaf4":"swp50"
+  "dc1-leaf5":"swp49" -- "dc1-leaf6":"swp49"
+  "dc1-leaf5":"swp50" -- "dc1-leaf6":"swp50"
+  "dc1-leaf7":"swp49" -- "dc1-leaf8":"swp49"
+  "dc1-leaf7":"swp50" -- "dc1-leaf8":"swp50"
+  "dc1-leaf9":"swp49" -- "dc1-leaf10":"swp49"
+  "dc1-leaf9":"swp50" -- "dc1-leaf10":"swp50"
+
+  #DC1 Server ports
+  "dc1-server1":"eth1" -- "dc1-leaf1":"swp1"
+  "dc1-server1":"eth2" -- "dc1-leaf2":"swp1"
+  "dc1-server2":"eth1" -- "dc1-leaf1":"swp2"
+  "dc1-server2":"eth2" -- "dc1-leaf2":"swp2"
+  "dc1-server3":"eth1" -- "dc1-leaf3":"swp1"
+  "dc1-server3":"eth2" -- "dc1-leaf4":"swp1"
+  "dc1-server4":"eth1" -- "dc1-leaf3":"swp2"
+  "dc1-server4":"eth2" -- "dc1-leaf4":"swp2"
+  "dc1-server5":"eth1" -- "dc1-leaf5":"swp1"
+  "dc1-server5":"eth2" -- "dc1-leaf6":"swp1"
+  "dc1-server6":"eth1" -- "dc1-leaf5":"swp2"
+  "dc1-server6":"eth2" -- "dc1-leaf6":"swp2"
+  "dc1-server7":"eth1" -- "dc1-leaf7":"swp1"
+  "dc1-server7":"eth2" -- "dc1-leaf8":"swp1"
+  "dc1-server8":"eth1" -- "dc1-leaf7":"swp2"
+  "dc1-server8":"eth2" -- "dc1-leaf8":"swp2"
+  "dc1-server9":"eth1" -- "dc1-leaf9":"swp1"
+  "dc1-server9":"eth2" -- "dc1-leaf10":"swp1"
+  "dc1-server10":"eth1" -- "dc1-leaf9":"swp2"
+  "dc1-server10":"eth2" -- "dc1-leaf10":"swp2"
+
+  #DC2 Leaf to spine links
+  "dc2-leaf1":"swp51" -- "dc2-spine1":"swp1"
+  "dc2-leaf2":"swp51" -- "dc2-spine1":"swp2"
+  "dc2-leaf3":"swp51" -- "dc2-spine1":"swp3"
+  "dc2-leaf4":"swp51" -- "dc2-spine1":"swp4"
+  "dc2-leaf5":"swp51" -- "dc2-spine1":"swp5"
+  "dc2-leaf6":"swp51" -- "dc2-spine1":"swp6"
+  "dc2-leaf7":"swp51" -- "dc2-spine1":"swp7"
+  "dc2-leaf8":"swp51" -- "dc2-spine1":"swp8"
+  "dc2-leaf9":"swp51" -- "dc2-spine1":"swp9"
+  "dc2-leaf10":"swp51" -- "dc2-spine1":"swp10"
+  "dc2-leaf1":"swp52" -- "dc2-spine2":"swp1"
+  "dc2-leaf2":"swp52" -- "dc2-spine2":"swp2"
+  "dc2-leaf3":"swp52" -- "dc2-spine2":"swp3"
+  "dc2-leaf4":"swp52" -- "dc2-spine2":"swp4"
+  "dc2-leaf5":"swp52" -- "dc2-spine2":"swp5"
+  "dc2-leaf6":"swp52" -- "dc2-spine2":"swp6"
+  "dc2-leaf7":"swp52" -- "dc2-spine2":"swp7"
+  "dc2-leaf8":"swp52" -- "dc2-spine2":"swp8"
+  "dc2-leaf9":"swp52" -- "dc2-spine2":"swp9"
+  "dc2-leaf10":"swp52" -- "dc2-spine2":"swp10"
+
+  #DC2 Leaf peerlinks
+  "dc2-leaf1":"swp49" -- "dc2-leaf2":"swp49"
+  "dc2-leaf1":"swp50" -- "dc2-leaf2":"swp50"
+  "dc2-leaf3":"swp49" -- "dc2-leaf4":"swp49"
+  "dc2-leaf3":"swp50" -- "dc2-leaf4":"swp50"
+  "dc2-leaf5":"swp49" -- "dc2-leaf6":"swp49"
+  "dc2-leaf5":"swp50" -- "dc2-leaf6":"swp50"
+  "dc2-leaf7":"swp49" -- "dc2-leaf8":"swp49"
+  "dc2-leaf7":"swp50" -- "dc2-leaf8":"swp50"
+  "dc2-leaf9":"swp49" -- "dc2-leaf10":"swp49"
+  "dc2-leaf9":"swp50" -- "dc2-leaf10":"swp50"
+
+  #DC2 Server ports
+  "dc2-server1":"eth1" -- "dc2-leaf1":"swp1"
+  "dc2-server1":"eth2" -- "dc2-leaf2":"swp1"
+  "dc2-server2":"eth1" -- "dc2-leaf1":"swp2"
+  "dc2-server2":"eth2" -- "dc2-leaf2":"swp2"
+  "dc2-server3":"eth1" -- "dc2-leaf3":"swp1"
+  "dc2-server3":"eth2" -- "dc2-leaf4":"swp1"
+  "dc2-server4":"eth1" -- "dc2-leaf3":"swp2"
+  "dc2-server4":"eth2" -- "dc2-leaf4":"swp2"
+  "dc2-server5":"eth1" -- "dc2-leaf5":"swp1"
+  "dc2-server5":"eth2" -- "dc2-leaf6":"swp1"
+  "dc2-server6":"eth1" -- "dc2-leaf5":"swp2"
+  "dc2-server6":"eth2" -- "dc2-leaf6":"swp2"
+  "dc2-server7":"eth1" -- "dc2-leaf7":"swp1"
+  "dc2-server7":"eth2" -- "dc2-leaf8":"swp1"
+  "dc2-server8":"eth1" -- "dc2-leaf7":"swp2"
+  "dc2-server8":"eth2" -- "dc2-leaf8":"swp2"
+  "dc2-server9":"eth1" -- "dc2-leaf9":"swp1"
+  "dc2-server9":"eth2" -- "dc2-leaf10":"swp1"
+  "dc2-server10":"eth1" -- "dc2-leaf9":"swp2"
+  "dc2-server10":"eth2" -- "dc2-leaf10":"swp2"
+
+  #DC1 to DC2 spine links
+  "dc2-spine1":"swp51" -- "dc1-spine1":"swp51"
+  "dc1-spine1":"swp52" -- "dc2-spine1":"swp52"
+  "dc2-spine2":"swp51" -- "dc1-spine2":"swp51"
+  "dc1-spine2":"swp52" -- "dc2-spine2":"swp52"
+
+  #DC1 Firewall links
+  "dc1-spine1":"swp21" -- "dc1-fw1":"eth1"
+  "dc1-spine2":"swp21" -- "dc1-fw1":"eth2"
+
+  #DC2 Firewall links
+  "dc2-spine1":"swp21" -- "dc2-fw1":"eth1"
+  "dc2-spine2":"swp21" -- "dc2-fw1":"eth2"
+
+}
