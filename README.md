@@ -1,6 +1,6 @@
 # NA Vagrant
 De vagrant omgeving ziet er alsvolgt uit:
-![Vagrant omgeving](./vagrant_setup.png "Vagrant omgeving")
+![Vagrant omgeving](./Documentation/vagrant_setup.png "Vagrant omgeving")
 
 Volg de volgende stappen om de vagrant file te genereren:
 
@@ -60,57 +60,7 @@ drwxrwxr-x 3 patrick patrick   4096 Jan 23 09:50 helper_scripts
 sudo vagrant status
 
 Na bovenstaande commando zou je de volgende output moeten zien:
-patrick@cumulus-demo:~/demo/na-vagrant$ sudo vagrant status
-Current machine states:
-
-oob-mgmt-server           not created (libvirt)
-oob-mgmt-switch           not created (libvirt)
-dc1-spine1                not created (libvirt)
-dc2-spine1                not created (libvirt)
-dc2-spine2                not created (libvirt)
-dc1-spine2                not created (libvirt)
-dc1-leaf10                not created (libvirt)
-dc1-leaf7                 not created (libvirt)
-dc2-leaf3                 not created (libvirt)
-dc1-leaf3                 not created (libvirt)
-dc2-leaf7                 not created (libvirt)
-dc1-leaf5                 not created (libvirt)
-dc2-leaf10                not created (libvirt)
-dc1-leaf9                 not created (libvirt)
-dc2-leaf1                 not created (libvirt)
-dc1-leaf4                 not created (libvirt)
-dc2-leaf8                 not created (libvirt)
-dc1-leaf2                 not created (libvirt)
-dc2-leaf4                 not created (libvirt)
-dc1-leaf6                 not created (libvirt)
-dc2-leaf9                 not created (libvirt)
-dc2-leaf6                 not created (libvirt)
-dc2-leaf2                 not created (libvirt)
-dc1-leaf1                 not created (libvirt)
-dc1-leaf8                 not created (libvirt)
-dc2-leaf5                 not created (libvirt)
-dc1-server2               not created (libvirt)
-dc2-server6               not created (libvirt)
-dc1-server8               not created (libvirt)
-dc2-server1               not created (libvirt)
-dc2-server4               not created (libvirt)
-dc2-server10              not created (libvirt)
-dc1-server1               not created (libvirt)
-dc2-server3               not created (libvirt)
-dc2-server5               not created (libvirt)
-dc1-server4               not created (libvirt)
-dc2-server9               not created (libvirt)
-dc2-server2               not created (libvirt)
-dc1-server6               not created (libvirt)
-dc1-server7               not created (libvirt)
-dc1-server3               not created (libvirt)
-dc1-server10              not created (libvirt)
-dc1-fw1                   not created (libvirt)
-dc2-fw1                   not created (libvirt)
-dc1-server5               not created (libvirt)
-dc2-server7               not created (libvirt)
-dc2-server8               not created (libvirt)
-dc1-server9               not created (libvirt)
+![Vagrant status](./Documentation/vagrant_status.png "Vagrant status")
 
 
 ### 6. Opspinnen omgeving
