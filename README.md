@@ -12,8 +12,8 @@ git clone https://gitlab.com/cumulus-consulting/tools/topology_converter.git
 
 git clone https://github.com/Falco-networks/na-vagrant.git
 
-Je zal nu de volgende 2 folder zien: 
-Patricks-Work-MacBook-Pro:demo patrick$ ls
+Je zal nu de volgende 2 folder zien:  
+Patricks-Work-MacBook-Pro:demo patrick$ ls  
 na-vagrant		topology_converter
 
 ### 3. cd naar de na vagrant folder:
@@ -21,19 +21,19 @@ na-vagrant		topology_converter
 cd na-vagrant
 
 Je zal nu de volgende inhoud zien:
-Patricks-Work-MacBook-Pro:na-vagrant patrick$ ls
+Patricks-Work-MacBook-Pro:na-vagrant patrick$ ls  
 README.md	ansible-scripts	helper_scripts	na.dot
 
 De na.dot file beschrijft de omgeving zoals aangemaakt moet gaan worden in vagrant. Hier in staan de nodes die aangemaakt moeten worden en hoe deze onderling met elkaar verbonden zijn. Verder staat hier voor sommmige nodes (hosts) nog een script wat start tijdens de eerste keer booten om een aantal zaken uit te voeren voor vagrant en verbinding met het oob-mgmt netwerk.
 
 ### 4. Installeer de volgende python requirements:
 
-sudo apt install python3-pip
-sudo pip3 install --upgrade pip
-sudo pip3 install setuptools
-sudo pip3 install pydotplus
-sudo pip3 install jinja2
-sudo pip3 install ipaddress
+sudo apt install python3-pip  
+sudo pip3 install --upgrade pip  
+sudo pip3 install setuptools  
+sudo pip3 install pydotplus  
+sudo pip3 install jinja2  
+sudo pip3 install ipaddress  
 
 Na het installeren van de python requirements kan je de topology converter van Cumulus gebruiken om de vagrantfile te genereren.
 
@@ -58,34 +58,26 @@ Na bovenstaande commando zou je de volgende output moeten zien:
 
 
 ### 6. Opspinnen omgeving
-
 Voor het gebruik gaan maken van de omgeving heb je altijd de oob-mgmt-server en oob-mgmt-switch nodig. Deze kan je opspinnen door het volgende commando te doen:
 sudo vagrant up /oob/
 
 Hierna kan je verschillende nodes starten op de volgende manieren:
 
-### 1 node staren:
-
-sudo vagrant up node-name
-
-Bijvoorbeeld:
-
+#### 1 node staren:
+sudo vagrant up node-name  
+Bijvoorbeeld:  
 sudo vagrant up dc1-leaf1
 
-### meerdere nodes starten:
+#### meerdere nodes starten:
 
-sudo vagrant up node1 node2 node3
+sudo vagrant up node1 node2 node3  
+Bijvoorbeeld:  
+sudo vagrant up dc1-leaf1 dc1-leaf2 dc1-spine1  
 
-Bijvoorbeeld:
-
-sudo vagrant up dc1-leaf1 dc1-leaf2 dc1-spine1
-
-### 1 datacenter starten:
-
+#### 1 datacenter starten:
 sudo vagrant up /dc1/
 
-### Alle nodes starten:
-
+#### Alle nodes starten:
 sudo vagrant up
 
 
