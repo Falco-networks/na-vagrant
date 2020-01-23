@@ -20,7 +20,7 @@ na-vagrant		topology_converter
 
 cd na-vagrant
 
-Je zal nu de volgende inhoud zien:
+Je zal nu de volgende inhoud zien:  
 Patricks-Work-MacBook-Pro:na-vagrant patrick$ ls  
 README.md	ansible-scripts	helper_scripts	na.dot
 
