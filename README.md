@@ -13,16 +13,16 @@ git clone https://gitlab.com/cumulus-consulting/tools/topology_converter.git
 git clone https://github.com/Falco-networks/na-vagrant.git
 
 Je zal nu de volgende 2 folder zien:  
-Patricks-Work-MacBook-Pro:demo patrick$ ls  
-na-vagrant		topology_converter
+*Patricks-Work-MacBook-Pro:demo patrick$ ls*  
+*na-vagrant		topology_converter*
 
 ### 3. cd naar de na vagrant folder:
 
 cd na-vagrant
 
 Je zal nu de volgende inhoud zien:  
-Patricks-Work-MacBook-Pro:na-vagrant patrick$ ls  
-README.md	ansible-scripts	helper_scripts	na.dot
+*Patricks-Work-MacBook-Pro:na-vagrant patrick$ ls*  
+*README.md	ansible-scripts	helper_scripts	na.dot*
 
 De na.dot file beschrijft de omgeving zoals aangemaakt moet gaan worden in vagrant. Hier in staan de nodes die aangemaakt moeten worden en hoe deze onderling met elkaar verbonden zijn. Verder staat hier voor sommmige nodes (hosts) nog een script wat start tijdens de eerste keer booten om een aantal zaken uit te voeren voor vagrant en verbinding met het oob-mgmt netwerk.
 
