@@ -5,6 +5,7 @@ De vagrant omgeving ziet er alsvolgt uit:
 Volg de volgende stappen om de vagrant file te genereren:
 
 1. Clone de volgende cumulus repo naar de server waar je de vagrant demo op gaat starten:
+
 git clone https://gitlab.com/cumulus-consulting/tools/topology_converter.git
 
 2. Clone de NA-Vagrant repo naar de server waar je de vagrant demo op gaat starten:
