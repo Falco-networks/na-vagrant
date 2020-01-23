@@ -1,6 +1,4 @@
 # NA Vagrant
-Vagrant demo for NA
-
 De vagrant omgeving ziet er alsvolgt uit:
 ![Vagrant omgeving](./vagrant_setup.png "Vagrant omgeving")
 
