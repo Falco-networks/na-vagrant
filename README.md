@@ -70,7 +70,7 @@ sudo vagrant up /oob/
 
 Hierna kan je verschillende nodes starten op de volgende manieren:
 
-# 1 node staren:
+### 1 node staren:
 
 sudo vagrant up node-name
 
@@ -78,7 +78,7 @@ Bijvoorbeeld:
 
 sudo vagrant up dc1-leaf1
 
-# meerdere nodes starten:
+### meerdere nodes starten:
 
 sudo vagrant up node1 node2 node3
 
@@ -86,11 +86,11 @@ Bijvoorbeeld:
 
 sudo vagrant up dc1-leaf1 dc1-leaf2 dc1-spine1
 
-# 1 datacenter starten:
+### 1 datacenter starten:
 
 sudo vagrant up /dc1/
 
-# Alle nodes starten:
+### Alle nodes starten:
 
 sudo vagrant up
 
