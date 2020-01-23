@@ -46,14 +46,8 @@ De -c in het bovenstaande commando geeft aan om automatische een oob-mgmt netwer
 Voor het uitvoeren van de na-demo omgeving zonder netq heb je minimaal 31232 MB aan ram nodig
 
 Na het uitvoeren van het script zie je de volgende folders:
-patrick@cumulus-demo:~/demo/na-vagrant$ ls -l
-total 380
-drwxrwxr-x 2 patrick patrick   4096 Jan 23 09:50 ansible-scripts
--rw-rw-r-- 1 patrick patrick  11155 Jan 23 09:50 dhcp_mac_map
-drwxrwxr-x 3 patrick patrick   4096 Jan 23 09:50 helper_scripts
--rw-rw-r-- 1 patrick patrick   9277 Jan 23 09:50 na.dot
--rw-rw-r-- 1 patrick patrick     33 Jan 23 09:50 README.md
--rw-rw-r-- 1 patrick patrick 350601 Jan 23 09:50 Vagrantfile
+
+![folder](./Documentation/folder.png "folder")
 
 ### 6. Controleer of de vagrantfile leesbaar is voor vagrant
 
