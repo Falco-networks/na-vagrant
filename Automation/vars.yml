@@ -1,0 +1,243 @@
+---
+    devices:
+#Datacenter 1
+#DC1 Spines
+        dc1-spine1:
+            hostname: "dc1-spine1"
+            loopback: "10.0.0.11/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            leaf_ports: 
+                - swp1
+                - swp2
+                - swp3
+                - swp4
+                - swp5
+                - swp6
+                - swp7
+                - swp8
+                - swp9
+                - swp10
+            firewall_ports:
+                - swp21
+        dc1-spine2:
+            hostname: "dc1-spine2"
+            loopback: "10.0.0.12/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            leaf_ports: 
+                - swp1
+                - swp2
+                - swp3
+                - swp4
+                - swp5
+                - swp6
+                - swp7
+                - swp8
+                - swp9
+                - swp10
+            firewall_ports:
+                - swp21
+#DC1 Leafs
+        dc1-leaf1:
+            hostname: "dc1-leaf1"
+            loopback: "10.0.0.111/32"
+            vxlan_tunnelip: "10.0.0.111"
+            clagd-vxlan-anycast-ip: "10.10.10.20"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server1", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server2", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.201/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.201/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+            vxlan:
+                - { vni: "vni10101", vid: "101" }
+                - { vni: "vni10102", vid: "102" }
+        
+        dc1-leaf2:
+            hostname: "dc1-leaf2"
+            loopback: "10.0.0.112/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server1", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server2", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.202/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.202/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+            vxlan:
+                - { vni: "vni10101", vid: "101" }
+                - { vni: "vni10102", vid: "102" }
+
+        dc1-leaf3:
+            hostname: "dc1-leaf3"
+            loopback: "10.0.0.113/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server3", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server4", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.203/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.203/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf4:
+            hostname: "dc1-leaf4"
+            loopback: "10.0.0.114/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server3", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server4", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.204/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.204/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf5:
+            hostname: "dc1-leaf5"
+            loopback: "10.0.0.115/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server5", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server6", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.205/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.205/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf6:
+            hostname: "dc1-leaf6"
+            loopback: "10.0.0.116/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server5", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server6", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.206/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.206/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf7:
+            hostname: "dc1-leaf7"
+            loopback: "10.0.0.117/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server7", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server8", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.207/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.207/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf8:
+            hostname: "dc1-leaf8"
+            loopback: "10.0.0.118/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server7", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server8", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.208/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.208/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf9:
+            hostname: "dc1-leaf9"
+            loopback: "10.0.0.119/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server9", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server10", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.209/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.209/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+        dc1-leaf10:
+            hostname: "dc1-leaf10"
+            loopback: "10.0.0.120/32"
+            peerlink_ports:
+                - swp49
+                - swp50
+            spine_ports:
+                - swp51
+                - swp52
+            server_bonds:
+                - { bond: "dc1-server9", interface: "swp1", clag_id: "1" }
+                - { bond: "dc1-server10", interface: "swp2", clag_id: "2" }
+            vlans:
+                - { vid: "101", ip: "192.168.101.0/24", gateway: "192.168.101.210/24", vrr: "192.168.101.1/24", mac: "00:00:5e:00:01:01" }
+                - { vid: "102", ip: "192.168.102.0/24", gateway: "192.168.102.210/24", vrr: "192.168.102.1/24", mac: "00:00:5e:00:01:02" }
+
+#Datacenter 2
+#DC2 Spines
+        dc2-spine1:
+            hostname: "dc2-spine1"
+            loopback: "10.0.0.21/32"
+        dc2-spine2:
+            hostname: "dc2-spine2"
+            loopback: "10.0.0.22/32"
+#DC2 Leafs
+        dc2-leaf1:
+            hostname: "dc2-leaf1"
+            loopback: "10.0.0.211/32"
+        dc2-leaf2:
+            hostname: "dc2-leaf2"
+            loopback: "10.0.0.212/32"
+        dc2-leaf3:
+            hostname: "dc2-leaf3"
+            loopback: "10.0.0.213/32"
+        dc2-leaf4:
+            hostname: "dc2-leaf4"
+            loopback: "10.0.0.214/32"
+        dc2-leaf5:
+            hostname: "dc2-leaf5"
+            loopback: "10.0.0.215/32"
+        dc2-leaf6:
+            hostname: "dc2-leaf6"
+            loopback: "10.0.0.216/32"
+        dc2-leaf7:
+            hostname: "dc2-leaf7"
+            loopback: "10.0.0.217/32"
+        dc2-leaf8:
+            hostname: "dc2-leaf8"
+            loopback: "10.0.0.218/32"
+        dc2-leaf9:
+            hostname: "dc2-leaf9"
+            loopback: "10.0.0.219/32"
+        dc2-leaf10:
+            hostname: "dc2-leaf10"
+            loopback: "10.0.0.220/32"
