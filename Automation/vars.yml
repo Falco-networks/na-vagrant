@@ -5,6 +5,7 @@
         dc1-spine1:
             hostname: "dc1-spine1"
             loopback: "10.0.0.11/32"
+            asn: ""
             peerlink_ports:
                 - swp49
                 - swp50
