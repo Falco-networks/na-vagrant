@@ -2,6 +2,7 @@ graph dc1 {
  #OOB network
  "oob-mgmt-server" [function="oob-server" mgmt_ip="192.168.200.254/24"]
  "oob-mgmt-switch" [function="oob-switch" mgmt_ip="192.168.200.1"]
+ "application-server" [function="host" mgmt_ip="192.168.200.253" config="./helper_scripts/extra_server_config.sh"]
  #DC1
  "dc1-leaf1" [function="leaf" mgmt_ip="192.168.200.101"]
  "dc1-leaf2" [function="leaf" mgmt_ip="192.168.200.102"]
